@@ -1,0 +1,12 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <img id="stream" src="" />
+  <script>
+    var random=Math.floor((Math.random() * 10000) + 1);
+    var url = "http://localhost:5000/stream?q=" + random;
+    document.getElementById("stream").setAttribute("src", url);
+  </script>
+  </body>
+</html>
