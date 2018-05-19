@@ -67,4 +67,4 @@ api.add_resource(Hello, '/hello')
 
 
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', threaded=True, debug=True)
+    application.run(host='0.0.0.0', threaded=False, debug=True)
