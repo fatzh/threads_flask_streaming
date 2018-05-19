@@ -25,6 +25,7 @@ class Camera():
         Camera.streaming = True
         if Camera.thread is None:
             Camera.thread = threading.Thread(target=Camera._stream)
+            print('STARTING STREAMING THREAD')
             Camera.thread.start()
         while Camera.frame is None:
             time.sleep(0.05)
@@ -54,11 +55,11 @@ class Camera():
 
         # we arrive here if streaming is set to Flase (by stream_stop for
         # example) or if no frame has been requested in the last X seconds
+        print('STOPPING STREAMING THREAD')
         cls.streaming = False
         cls.thread = None
 
     def get_frame(self):
-        time.sleep(0.5)
         Camera.last_frame_request = time.time()
         return self.frame
 
